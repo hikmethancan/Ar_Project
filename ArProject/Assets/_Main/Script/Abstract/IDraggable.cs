@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace _Main.Script.Abstract
 {
     public interface IDraggable
@@ -5,5 +7,6 @@ namespace _Main.Script.Abstract
         void Down();
         void Drag();
         void Up();
+        public Camera Camera { get; set; }
     }
 }

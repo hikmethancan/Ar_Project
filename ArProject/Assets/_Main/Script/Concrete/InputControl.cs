@@ -19,8 +19,12 @@ namespace _Main.Script.Concrete
                 Ray ray = camera.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out _hit))
                 {
-                    if(_hit.collider.TryGetComponent(out _draggable))
+                    if (_hit.collider.TryGetComponent(out _draggable))
+                    {
+                        _draggable.Camera = camera;
                         _draggable.Down();
+                      
+                    }
                 }
             }
             if(Input.GetMouseButton(0))
